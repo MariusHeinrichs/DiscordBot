@@ -1,0 +1,22 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Ein Einfacher Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariusHeinrichs/DiscordBot.git"
+  },
+  "author": "Marius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariusHeinrichs/DiscordBot/issues"
+  },
+  "homepage": "https://github.com/MariusHeinrichs/DiscordBot#readme",
+  "dependencies": {
+    "discord.js": "^13.7.0"
+  }
+}
