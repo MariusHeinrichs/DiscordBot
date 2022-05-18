@@ -1,12 +1,12 @@
 const Canvas = require("canvas")
 const Discord = require('discord.js')
 
-const background = "https://wallhere.com/de/wallpaper/1779163"
+const background = "./Images/everything-is-fine-dog.jpeg"
 
 // background dimensions
 const dim = {
-    height: 1080,
-    width: 1920,
+    height: 675,
+    width: 1200,
     margin: 50
 }
 
@@ -31,7 +31,7 @@ const generateImage = async (member) => {
     ctx.drawImage(backimg, 0, 0)
 
     // draw a rectangle
-    ctx.fillStyle = "rgba(0, 0, 0, 0, 8)"
+    ctx.fillStyle = "rgba(0, 0, 0, 0.8)"
     ctx.fillRect(dim.margin, dim.margin, dim.width - 2 * dim.margin, dim.height - 2*dim.margin)
 
     // save context
@@ -46,19 +46,22 @@ const generateImage = async (member) => {
     ctx.closePath()
     ctx.clip()
 
+    // draw Avatar in clipped Frame
     ctx.drawImage(avimg, av.x, av.y)
     ctx.restore()
 
+
+    // draw text
     ctx.fillStyle = "white"
     ctx.textAlign = "center"
 
-    ctx.font = "50px Roboto"
-    ctx.fillText("Wilkommen", dim.width / 2, dim.margin + 70)
+    ctx.font = "50px Arial"
+    ctx.fillText("Wilkommen", dim.width / 2, dim.margin + 50)
 
-    ctx.font = "60px Roboto"
+    ctx.font = "60px Arial"
     ctx.fillText(username + discrim, dim.width / 2, dim.height - dim.margin - 125)
 
-    ctx.font = "40px Roboto"
+    ctx.font = "40px Arial"
     ctx.fillText("auf dem Server", dim.width / 2, dim.height - dim.margin -50)
 
     // create a discord attachment with generated Image
