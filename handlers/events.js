@@ -12,6 +12,7 @@ module.exports = (bot, reload) => {
     if(events.length === 0){
         console.log("No events to load")
     }
+    else console.log("Loading Events: ")
 
     events.forEach((f, i) => {
         // delete old events if reload
@@ -58,5 +59,9 @@ function initEvents(bot) {
 
     client.on("guildMemberAdd", (member) => {
         triggerEventHandler(bot, "guildMemberAdd", member)
+    })
+
+    client.on("interactionCreate", (interaction) => {
+        triggerEventHandler(bot, "interactionCreate", interaction)
     })
 }
